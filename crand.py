@@ -1,7 +1,4 @@
 import ctypes
-
-#challenge: photographer
-#this solution is an example of rand() replication in python
 libc = ctypes.CDLL("libc.so.6")
 libc.srand(0xbeef)
 
