@@ -1,1 +1,1 @@
-just some scripts involved in my rev study
+just some scripts in my rev study
