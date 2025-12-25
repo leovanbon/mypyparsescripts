@@ -1,3 +1,0 @@
-[STAGE  1]: Basilisk
-[INFO] HP: 18409, STR:   192, AGI:    14, VIT:    39, INT:    13, END:     5, DEX:    61
-Cast your spell!:

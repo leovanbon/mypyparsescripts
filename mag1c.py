@@ -1,8 +1,8 @@
-#cip = "C@qpl==Bppl@<=pG<>@l>@Blsp<@l@AArqmGr=B@A>q@@B=GEsmC@ArBmAGlA=@q"
-#print(''.join([chr(((b ^ 3) - 13) % 128) for b in bytearray(cip.encode('utf-8'))[::-1]]))
-
+import struct
 from pwn import xor
 
+#cip = "C@qpl==Bppl@<=pG<>@l>@Blsp<@l@AArqmGr=B@A>q@@B=GEsmC@ArBmAGlA=@q"
+#print(''.join([chr(((b ^ 3) - 13) % 128) for b in bytearray(cip.encode('utf-8'))[::-1]]))
 
 # cip = bytes.fromhex("f8 e0 e6 9e 7f 32 68 31 05 dc a1 aa aa 09 b3 d8 41 f0 36 8c ce c7 ac 66 91 4c 32 ff 05 e0 d9 91")
 # print(xor(bytes([(x + 0x3b) & 0xFF for x in xor(bytes( [(y + 0x5a) & 0xFF for y in xor(cip, b'\x11\x33\x55\x77\x99\xbb\xdd')] ), b'\xef\xbe\xad\xde')]), b'\xde\xad\xbe\xef')  )
@@ -17,7 +17,6 @@ from pwn import xor
 # print(bytes([((((b-i)^ 0x5a) >> 4 | ((b-i)^ 0x5a) << 4)) & 0xff for i, b in enumerate(c)]))
 
 
-# import struct
 # data = bytes.fromhex("""
 # 39 00 00 00 9B FF FF FF 2C 00 00 00 C6 00 00 00
 # 59 00 00 00 58 00 00 00 39 00 00 00 AB 00 00 00
@@ -25,6 +24,12 @@ from pwn import xor
 # DA FF FF FF 73 00 00 00 52 00 00 00 66 00 00 00
 # """.replace('\n', '').replace(' ', ''))
 # values = list(struct.unpack(f'<{len(data)//4}i', data))
+
+
+# key = [0x88, 0x66, 0x44, 0x11, 0x77, 0x55, 0x22, 0x33]
+# ciphe = bytes.fromhex("220c6a33204455fb390074013c4156d704316528205156d70b217c14255b6ce10837651234464e")
+# roll = (8 - (len(ciphe) % 8)) % 8
+# print(xor(ciphe, key[roll:] + key[:roll]))
 
 
 # data= """

@@ -13,7 +13,7 @@ def compar(a,b):
     elif x>y: return 1
     else: return 0
 
-r = remote('host8.dreamhack.games', 15703)
+r = remote('host8.dreamhack.games', 14696)
 data = r.recvuntil(b'Result?').decode()
 arr = [list(map(int, line.split(':')[1].split())) + [int(line.split(':')[0])] for line in data.splitlines() if ':' in line and line.split(':')[0].strip().isdigit()]
 sor = sorted(arr, key=cmp_to_key(compar))
