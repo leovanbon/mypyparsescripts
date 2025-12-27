@@ -1,9 +1,7 @@
 import re
-import pyperclip #to the clipboard 
 from pwn import *
 
 p = remote("host8.dreamhack.games", 10620)
-# p = process("./prob")
 
 for i in range(10):
     p.recvuntil(b']:')
