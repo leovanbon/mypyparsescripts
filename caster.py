@@ -7,10 +7,6 @@ for i in range(10):
     p.recvuntil(b']:')
     monster = p.recvuntil(b'Cast your spell!: ').decode()
 
-    # with open('output.txt', 'r') as infor:
-    #     monster = infor.read()
-    # monster = pyperclip.paste()
-
     in4 = [int(s) for s in re.findall(r'\d+', monster)]
     print(in4)
     by=0
@@ -25,8 +21,7 @@ for i in range(10):
         spell = spell + 'B'
 
     spell = spell[:-1]
-    # print(spell)
-    # pyperclip.copy(spell)
+
     print(spell)
     p.sendline(spell.encode())
 
