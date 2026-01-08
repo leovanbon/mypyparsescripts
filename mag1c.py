@@ -66,3 +66,12 @@ from pwn import xor
 
 
 # print((lambda x: [int(x[i:i+5], 2) for i in range(0, len(x), 5)])("".join(f"{bin(ord(c))[2:]}" for c in "Rootsquare")))
+
+# little endian 
+# print("".join([bytes.fromhex(f"{c:x}")[::-1].decode() for c in hehex]))
+
+
+# one liner techniques so far:
+# print("".join(some_generator))
+# print(bytes([some_generator]))
+# print((lambda x: something_with_x)(define_x))
