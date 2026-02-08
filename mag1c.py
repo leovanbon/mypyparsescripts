@@ -75,3 +75,23 @@ from pwn import xor
 # print("".join(some_generator))
 # print(bytes([some_generator]))
 # print((lambda x: something_with_x)(define_x))
+
+
+# c = "Deim(yobzoRoA`m\u0089`ESf;xmOkh ]g}8VjFw[x-tG\u008dlaVCr"
+# key=[-11, 34, -28, -8, -57, -8, 2, 3, 5, -17, -13, -18, -53, -5, 0, 3, -19, -16, -12, -6, -48, 10, 7, -19, -4, -1, -67, -19, -15, 9, -47, -14, -8, -27, 3, -19, 3, -59, 5, -30, 8, 33, 22, -6, -50, 0]
+# c1 = [ord(c[i]) - key[i] for i in range(46)]
+# c2 = c1[-2:] + c1[16:-2] + c1[:16]
+# c3 = [0]*46
+# for i in range(46):
+#     if i % 3 == 1: c3[i] = c2[i]
+#     else: c3[i] = c2[i] - (i//3)
+# c4 = c3[-19:] + c3[:-19]
+# print("".join([chr(x%256) for x in c4]))
+
+# flag = [0]*28
+# cip = bytearray.fromhex("636A7264625A76126D62116C127E75117E731277127372120000005C")
+# key = [ord(c) for c in "BKSEC{CHAO_MUN9_D3N_R3V3RS3!!!}`"]
+# for i in range(len(flag)):
+#     for j in range(len(key)): #32
+#         cip[i] = cip[i] ^ key[-j-1]
+# print(cip)
