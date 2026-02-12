@@ -95,3 +95,7 @@ from pwn import xor
 #     for j in range(len(key)): #32
 #         cip[i] = cip[i] ^ key[-j-1]
 # print(cip)
+
+print(hex(1234))
+
+1909094399
