@@ -1,4 +1,4 @@
-just some scripts in my rev study, i randomly named them
+just some scripts from my ctf plays; they are intentionally misspelled
 
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⢶⢶⠶⠶⠖⠛⠛⠷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
