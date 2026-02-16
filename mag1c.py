@@ -97,25 +97,6 @@ from pwn import xor
 # print(cip)
 
 
-
-def xor_encrypt(plaintext, key):
-    plaintext_bytes = plaintext.encode()
-    key_bytes = key.encode()
-    key_repeated = key_bytes * (len(plaintext_bytes) // len(key_bytes)) + key_bytes[:len(plaintext_bytes) % len(key_bytes)]
-    encrypted_bytes = bytes([a ^ b for a, b in zip(plaintext_bytes, key_repeated)])
-    return encrypted_bytes.hex()
-
-def main():
-    encrypted_hex = '73796071764d47410a1c001e074d53680a0903066c0507690501665e594e'
-    key = '123456789'
-    # input_password = input('Input password > ')
-    # encrypted_input = xor_encrypt(input_password, key)
-    # if encrypted_input == encrypted_hex:
-    #     print('Correct password! Access successful!')
-    # else:
-    #     print('Wrong password! Access Denied!')
-    print(xor(bytes.fromhex(encrypted_hex), key))
-
-
-if __name__ == '__main__':
-    main()
+# encrypted_hex = '73796071764d47410a1c001e074d53680a0903066c0507690501665e594e'
+# key = '123456789'
+# print(xor(bytes.fromhex(encrypted_hex), key))
