@@ -101,42 +101,43 @@ from pwn import xor
 # key = '123456789'
 # print(xor(bytes.fromhex(encrypted_hex), key))
 
-key = b'ThisIsAFlag'
-c = bytearray([
-    22,
-    101,
-    133,
-    137,
-    79,
-    75,
-    166,
-    157,
-    189,
-    57,
-    172,
-    155,
-    144,
-    91,
-    137,
-    222,
-    52,
-    144,
-    211,
-    101,
-    114,
-    116,
-    121,
-    76,
-    154,
-    168,
-    83,
-    94
-])
-f = bytearray(len(c))
 
-f[0] = c[0] ^ key[0]
-for i in range(1, len(c)):
-    t = c[i] - f[i-1]
-    f[i] = t ^ key[i % len(key)]
+# key = b'ThisIsAFlag'
+# c = bytearray([
+#     22,
+#     101,
+#     133,
+#     137,
+#     79,
+#     75,
+#     166,
+#     157,
+#     189,
+#     57,
+#     172,
+#     155,
+#     144,
+#     91,
+#     137,
+#     222,
+#     52,
+#     144,
+#     211,
+#     101,
+#     114,
+#     116,
+#     121,
+#     76,
+#     154,
+#     168,
+#     83,
+#     94
+# ])
+# f = bytearray(len(c))
 
-print(f)
+# f[0] = c[0] ^ key[0]
+# for i in range(1, len(c)):
+#     t = c[i] - f[i-1]
+#     f[i] = t ^ key[i % len(key)]
+
+# print(f)

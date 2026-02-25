@@ -50,7 +50,7 @@ v5 = z(a1[17])
 s.add(v5 + v58 == 3417)
 
 v57 = z(a1[5])
-v6 = z(a1[1])
+v6 = z(a1[1])2
 bit_and_res = z(a1[14] & a1[6]) 
 s.add(((v57 - v6) ^ bit_and_res) == 0x40)
 
