@@ -77,7 +77,7 @@ from pwn import xor
 # print((lambda x: something_with_x)(define_x))
 
 
-# c = "Deim(yobzoRoA`m\u0089`ESf;xmOkh ]g}8VjFw[x-tG\u008dlaVCr"
+# c = "Deim(yobzoRoA`m\u0089`ESfxmOkh ]g}8VjFw[x-tG\u008dlaVCr"
 # key=[-11, 34, -28, -8, -57, -8, 2, 3, 5, -17, -13, -18, -53, -5, 0, 3, -19, -16, -12, -6, -48, 10, 7, -19, -4, -1, -67, -19, -15, 9, -47, -14, -8, -27, 3, -19, 3, -59, 5, -30, 8, 33, 22, -6, -50, 0]
 # c1 = [ord(c[i]) - key[i] for i in range(46)]
 # c2 = c1[-2:] + c1[16:-2] + c1[:16]
@@ -141,3 +141,41 @@ from pwn import xor
 #     f[i] = t ^ key[i % len(key)]
 
 # print(f)
+
+# c = [145814172, -142959094, 145814751, 145813987, -142958953, 145815287, 145814199, -142959208, 145814778, 145814468, -142958629, 145814865, 145814648, -142958842, 145815203, 145814748, -142959208, 145814807, 145814621, -142958671, 145814834, 145814687, -142958609, 145814743, 145814260, -142958730, 145815315, 145814452, -142959234, 145815358, 145814278, -142959253, 145815069]
+# seed = 88614617
+# maskA = 35299
+# maskB = 2818225
+# maskC = 35612
+# maskD = 1016586
+# twist = 217443421
+# acc1 = 71629604
+
+# from z3 import *
+# s = Solver()
+# x = [Int(f'x_{i}') for i in range(33)]
+
+# for i in range(33):
+#     if i%3 == 0:
+#         if c[i] > maskB-maskC: c[i] = c[i] + maskC
+#         if c[i] < maskD: c[i] = c[i] - maskD
+#         s.add(x[i]*13 + x[(i+1)%33]*3 - x[(i+2)%33]*5 + maskA - acc1 + twist == c[i])
+#     if i%3 == 1:
+#         if c[i] > maskC-maskD: c[i] = c[i] + maskD
+#         if c[i] < maskA: c[i] = c[i] - maskA
+#         s.add(x[i]*11 + x[(i+1)%33]*7 - x[(i+2)%33]*3 + maskB + acc1 - twist == c[i])
+#     if i%3 == 2:
+#         if c[i] > maskD-maskA: c[i] = c[i] + maskA
+#         if c[i] < maskB: c[i] = c[i] - maskB
+#         s.add(x[i]*9 + x[(i+1)%33]*4 - x[(i+2)%33]*6 + maskC - acc1 + twist == c[i])
+
+
+# for i in range(33):
+#     s.add(x[i] >= 32)
+#     s.add(x[i] <= 126)
+
+# if s.check() == sat:
+#     m = s.model()
+#     result = [m[x[i]].as_long() for i in range(33)]
+#     print(bytes(result))
+
