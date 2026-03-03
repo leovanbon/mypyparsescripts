@@ -25,3 +25,5 @@ from z3 import *
 #     m = s.model()
 #     result = [m[x[i]].as_long() for i in range(12)]
 #     print(result)
+import math
+print(math.sqrt(192*8))

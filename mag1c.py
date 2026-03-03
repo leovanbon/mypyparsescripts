@@ -179,3 +179,13 @@ from pwn import xor
 #     result = [m[x[i]].as_long() for i in range(33)]
 #     print(bytes(result))
 
+a1 = 0b0000_0001_0000_0001_1111_11_10_1000_0000
+
+def scram(a):
+    return ((a >> 25) | (a >> 9) & 0xFF80 | (a << 6) & 0x3F0000 | (a << 22)) & 0xffffffff
+
+
+# print(f"{a1:_b}")
+# print(f"{scram(a1):_b}")
+
+print(0x1869b - 0x4020 )
