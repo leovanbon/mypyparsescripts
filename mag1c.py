@@ -1,4 +1,4 @@
-import struct
+
 from pwn import xor
 
 #cip = "C@qpl==Bppl@<=pG<>@l>@Blsp<@l@AArqmGr=B@A>q@@B=GEsmC@ArBmAGlA=@q"
@@ -174,18 +174,11 @@ from pwn import xor
 #     s.add(x[i] >= 32)
 #     s.add(x[i] <= 126)
 
+
 # if s.check() == sat:
 #     m = s.model()
 #     result = [m[x[i]].as_long() for i in range(33)]
 #     print(bytes(result))
 
-a1 = 0b0000_0001_0000_0001_1111_11_10_1000_0000
-
-def scram(a):
-    return ((a >> 25) | (a >> 9) & 0xFF80 | (a << 6) & 0x3F0000 | (a << 22)) & 0xffffffff
-
-
-# print(f"{a1:_b}")
-# print(f"{scram(a1):_b}")
-
-print(0x1869b - 0x4020 )
+x = "BKSEC{just_some_mobiel_thing_........f..bb...c.ee..f........f}"
+print(x[:38])
