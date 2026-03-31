@@ -12,7 +12,7 @@ first_dish = hashlib.sha256(serial + sugar + self_has).digest()
 
 dat = open("backup.dat", "rb").read()
 ntwice = dat[5 : 0x15]
-tag = dat[0x19 + 39 : 0x19 + 39 + 32]
+tag = dat[0x40:]
 
 assert hmac.new(first_dish, dat[5:0x19+39], hashlib.sha256).digest() == tag, "HMAC not ok"
 print("HMAC ok")

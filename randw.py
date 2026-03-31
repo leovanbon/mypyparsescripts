@@ -12,13 +12,13 @@
 #             f_out.write(bytes([byte_ma]))
 #             c+=1
 
-verni = open('main', 'rb').read()
-byt = bytearray(len(verni)+1)
+verni = open('sun-temple', 'rb').read()
+byt = bytearray(len(verni))
 for i in range(len(verni)):
-    if i >= 0x1000 and verni[i] == 0xeb and verni[i+1] == 0xff and verni[i+2] == 0xc1:
-        for j in range(5):
-            byt[i+j] = 0x90
+    if i >= 0x1000 and verni[i] == 0xeb and verni[i+1] == 0xf7 and verni[i+2] == 0xe8:
+        for j in range(15):
+            byt[i - 12 + j] = 0x90
     else:
         byt[i] = verni[i]
 
-open('patched_main', 'wb').write(byt)
+open('sun-patched', 'wb').write(byt)

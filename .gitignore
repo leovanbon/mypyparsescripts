@@ -12,3 +12,5 @@ gpa.py
 main
 patched
 .gdb_history
+*.bin
+*.txt

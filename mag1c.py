@@ -180,5 +180,3 @@ from pwn import xor
 #     result = [m[x[i]].as_long() for i in range(33)]
 #     print(bytes(result))
 
-x = "BKSEC{just_some_mobiel_thing_........f..bb...c.ee..f........f}"
-print(x[:38])
