@@ -179,4 +179,5 @@ from pwn import xor
 #     m = s.model()
 #     result = [m[x[i]].as_long() for i in range(33)]
 #     print(bytes(result))
-
+c = '...................................'
+print(len(c))
